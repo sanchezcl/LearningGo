@@ -58,7 +58,10 @@ func readWithoutStruct() {
 	defer jsonFile.Close()
 	byteValueWithNonStruct, _ := ioutil.ReadAll(jsonFile)
 	var result map[string]interface{}
-	json.Unmarshal([]byte(byteValueWithNonStruct), &result)
+	err = json.Unmarshal([]byte(byteValueWithNonStruct), &result)
+	if err != nil {
+		fmt.Println(err)
+	}
 	fmt.Println("------------------------------------")
 	fmt.Println(result["users"])
 }

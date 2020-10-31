@@ -4,7 +4,8 @@ import "fmt"
 
 func main() {
 	for i := 0; i < 10; i++ {
-		go getInstance()
+		//go getInstance()
+		go getInstanceWithSyncOnce()
 	}
 
 	fmt.Scanln()
